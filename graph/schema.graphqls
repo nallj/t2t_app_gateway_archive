@@ -1,0 +1,15 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type GetImageResponse {
+  "Was the requested image found?"
+  isFound: Boolean!
+  "Base 64 representation of found image. Otherwise, null."
+  data: String
+}
+
+type Query {
+  "Fetch an image based on the given ID."
+  getImage(imageId: ID!): GetImageResponse
+}
